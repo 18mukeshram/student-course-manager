@@ -1,0 +1,71 @@
+<div class="space-y-6">
+  <!-- Page header -->
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+    <div>
+      <h1 class="text-3xl font-semibold tracking-tight">Courses</h1>
+      <p class="text-sm text-slate-300 mt-1">
+        Browse available courses and view enrolled students.
+      </p>
+    </div>
+    <div class="flex items-center gap-2 text-xs text-slate-400">
+      <span
+        class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-200"
+      >
+        ● {{ filteredCourses.length }} active courses
+      </span>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="relative">
+    <input
+      type="text"
+      class="w-full rounded-2xl bg-slate-900/60 border border-slate-700 px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent"
+      placeholder="Search by course name or code"
+      [(ngModel)]="searchTerm"
+      (input)="onSearchChange()"
+    />
+  </div>
+
+  <!-- Course cards -->
+  <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      *ngFor="let course of filteredCourses"
+      (click)="goToCourse(course.id)"
+      class="group cursor-pointer rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-sky-500/60 hover:bg-slate-900/90 transition shadow-lg shadow-slate-950/40 p-4 flex flex-col justify-between"
+    >
+      <div class="space-y-2">
+        <div class="flex items-center justify-between gap-2">
+          <h2 class="text-lg font-semibold group-hover:text-sky-300">
+            {{ course.name }}
+          </h2>
+          <span class="text-[11px] px-2 py-1 rounded-full bg-slate-800 text-slate-300">
+            {{ course.code }}
+          </span>
+        </div>
+
+        <p class="text-xs text-slate-300">
+          Instructor:
+          <span class="font-medium text-slate-100">
+            {{ course.instructor }}
+          </span>
+        </p>
+
+        <p class="text-xs text-slate-400">
+          Credits:
+          <span class="font-semibold text-slate-200">
+            {{ course.credits }}
+          </span>
+        </p>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between text-xs text-slate-400">
+        <span class="inline-flex items-center gap-1">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          {{ course.students.length }} students enrolled
+        </span>
+        <span class="text-sky-300 group-hover:translate-x-0.5 transition"> View details → </span>
+      </div>
+    </div>
+  </div>
+</div>
