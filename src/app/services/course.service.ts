@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Course, Student } from '../models/course.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+// Service responsible for managing course and student data
+// Acts as a single source of truth for the application
 @Injectable({
   providedIn: 'root',
 })
