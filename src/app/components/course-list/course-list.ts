@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// Handles rendering and filtering of courses
 @Component({
   selector: 'app-course-list',
   templateUrl: './course-list.html',
