@@ -1,59 +1,104 @@
-# StudentCourseManager
+# 🎓 Student Course Management System (Angular SPA)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+A responsive Single Page Application (SPA) built with **Angular (standalone components)** and **Tailwind CSS**. The app provides course browsing, dynamic search/filtering, course detail pages, and student enrollment management (add/remove students).
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
+- Course listing with live search and filtering
+- Course detail pages with student list
+- Add and remove student functionality (in-memory)
+- Angular routing with standalone components
+- Service-driven state management pattern
+- Responsive dashboard UI using Tailwind CSS
+- 404 Not Found page for invalid routes
+
+---
+
+## Tech Stack
+
+- Angular (TypeScript)
+- Tailwind CSS
+- SCSS
+- RxJS (used in service patterns)
+- Angular CLI
+
+Tools: VS Code, Git, GitHub, Chrome DevTools
+
+---
+
+## Folder Structure
+
+student-course-manager/
+├─ src/
+│ ├─ app/
+│ │ ├─ components/
+│ │ │ ├─ course-list/
+│ │ │ ├─ course-detail/
+│ │ │ └─ not-found/
+│ │ ├─ services/
+│ │ │ └─ course.service.ts
+│ │ ├─ app.routes.ts
+│ │ └─ app.ts
+│ └─ assets/
+├─ tailwind.config.js
+├─ package.json
+└─ README.md
+
+yaml
+Copy code
+
+---
+
+## Setup & Run (local)
+
+1. Clone:
+   git clone https://github.com/<your-username>/student-course-manager.git
+   cd student-course-manager
+
+Install dependencies:
+npm install
+
+Run dev server:
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open:
+http://localhost:4200
 
-## Code scaffolding
+## Notes on Implementation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, then run:
+Uses Angular standalone components and a modern routing setup (app.routes.ts).
 
-```bash
-ng generate component component-name
-```
+Course data is managed in a service (CourseService) using a simple in-memory model to demonstrate component-service interaction.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Two-way binding ([(ngModel)]) used for search input and add-student form.
 
-```bash
-ng generate --help
-```
+Tailwind configured for responsive utility classes and design consistency.
 
-## Building
+## What I learned
 
-To build the project run:
+Building SPAs with Angular standalone components
 
-```bash
-ng build
-```
+Routing and route parameter handling
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Service-based state management and component communication
 
-## Running unit tests
+Integrating Tailwind with an Angular project
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Debugging template errors and lifecycle-related issues
 
-```bash
-ng test
-```
+## Future Improvements
 
-## Running end-to-end tests
+Add a backend (Node/Express or Firebase) for persistent data storage
 
-For end-to-end (e2e) testing, run:
+Implement authentication and role-based access
 
-```bash
-ng e2e
-```
+Add pagination, sorting, and student profile pages
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Deploy a production build and attach a live demo link
 
-## Additional Resources
+## License & Contact
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT License — feel free to reuse.
+Contact: mukeshrambellamkonda@gmail.com
